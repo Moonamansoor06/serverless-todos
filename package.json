@@ -1,0 +1,9 @@
+{
+  "name": "jamstack-todo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "moonamansoor06 <moonamansoor06@gmail.com>",
+  "license": "MIT",
+  "private":"true",
+  "workspaces":["packages/*"]
+}
