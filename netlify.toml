@@ -1,2 +1,2 @@
 [build]
-  command = "npm i -gs yarn && yarn workspace www build"
+  command = "npm i -gs yarn && yarn build"
