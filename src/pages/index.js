@@ -23,10 +23,10 @@ const Index = () => {
                 <Button
             sx={{marginTop:2}}
             onClick={()=>{
-              console.log(netlifyIdentity.currentUser())
+             <h1>{netlifyIdentity.currentUser()}</h1>
             }}
             >
-                Log in</Button>
+                Log User</Button>
 
         </Flex>
         </Container>
