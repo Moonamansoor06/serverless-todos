@@ -10,7 +10,7 @@ let DashLoggedOut = props => {
   return (
     <Container>
       <Flex sx={{ flexDirection: "column", padding: 3 }}>
-        <Heading as="h1">Get Stuff Done</Heading>
+        <Heading as="h1">Dashboard</Heading>
         <Button
           sx={{ marginTop: 2 }}
           onClick={() => {

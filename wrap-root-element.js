@@ -1,10 +1,10 @@
 const React = require('react'); 
 const {ThemeProvider}  = require('theme-ui');
-const {dark}  =require('@theme-ui/presets');
+const {swiss}  =require('@theme-ui/presets');
 const {Provider}=require("./identity-context")
 
 const tokens={
-    ...dark,
+    ...swiss,
     sizes:{container:1024}
 };
 
