@@ -4,7 +4,7 @@ const q = faunadb.query;
 
 var client = new faunadb.Client({ secret: process.env.FAUNA });
 
-// Construct a schema, using GraphQL schema language
+
 const typeDefs = gql`
   type Query {
     todos: [Todo]!
@@ -20,7 +20,7 @@ const typeDefs = gql`
   }
 `;
 
-// Provide resolver functions for your schema fields
+
 const resolvers = {
   Query: {
     todos: async (parent, args, { user }) => {
@@ -86,11 +86,6 @@ const server = new ApolloServer({
       return {};
     }
   },
-  // By default, the GraphQL Playground interface and GraphQL introspection
-  // is disabled in "production" (i.e. when `process.env.NODE_ENV` is `production`).
-  //
-  // If you'd like to have GraphQL Playground and introspection enabled in production,
-  // the `playground` and `introspection` options must be set explicitly to `true`.
   playground: true,
   introspection: true
 });
