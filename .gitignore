@@ -2,3 +2,5 @@
 public
 node_modules
 .envrc
+# Local Netlify folder
+.netlify

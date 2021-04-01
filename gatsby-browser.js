@@ -13,21 +13,18 @@ const wrapRootElement = require("./wrap-root-element");
 const authLink = setContext((_, { headers }) => {
   const user = netlifyIdentity.currentUser();
   const token = user.token.access_token;
-  // return the headers to the context so httpLink can read them
+
   return {
     headers: {
       ...headers,
-      Authorization: token ? `Bearer ${token}` : "",
-      "Content-Type": "application/json",
-      'Access-Control-Allow-Origin': '*',     
-   
+      Authorization: token ? `Bearer ${token}` : ""
     }
   };
 });
 
 const httpLink = new HttpLink({
   uri:
-    "https://serverless-todos-12c.netlify.app/.netlify/functions/graphql"
+    "https://serverless-todo-netlify-fauna-egghead.netlify.com/.netlify/functions/graphql"
 });
 const client = new ApolloClient({
   cache: new InMemoryCache(),

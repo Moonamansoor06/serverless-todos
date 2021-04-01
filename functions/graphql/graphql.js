@@ -4,6 +4,7 @@ const q = faunadb.query;
 
 var client = new faunadb.Client({ secret: process.env.FAUNA });
 
+
 const typeDefs = gql`
   type Query {
     todos: [Todo]!
@@ -19,6 +20,7 @@ const typeDefs = gql`
   }
 `;
 
+// Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
     todos: async (parent, args, { user }) => {
@@ -84,15 +86,13 @@ const server = new ApolloServer({
       return {};
     }
   },
-
-  playground: true,
+ playground: true,
   introspection: true
 });
 
 exports.handler = server.createHandler({
   cors: {
     origin: "*",
-    credentials: true,
-    cache:'no-cache'
+    credentials: true
   }
 });
