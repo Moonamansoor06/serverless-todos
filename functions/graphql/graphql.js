@@ -4,7 +4,6 @@ const q = faunadb.query;
 
 var client = new faunadb.Client({ secret: process.env.FAUNA });
 
-
 const typeDefs = gql`
   type Query {
     todos: [Todo]!
@@ -19,7 +18,6 @@ const typeDefs = gql`
     updateTodoDone(id: ID!): Todo
   }
 `;
-
 
 const resolvers = {
   Query: {
@@ -86,6 +84,7 @@ const server = new ApolloServer({
       return {};
     }
   },
+
   playground: true,
   introspection: true
 });
